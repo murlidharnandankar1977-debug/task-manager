@@ -5,7 +5,7 @@ const router = express.Router();
 const {
   registerUser,
   loginUser,
-} = require("../controllers/authcontroller");
+} = require("../controllers/authController");
 
 router.get("/test", (req, res) => {
   res.json({ message: "Auth Route Working" });

@@ -7,7 +7,7 @@ const {
   getTasks,
   deleteTask,
   updateTask,
-} = require("../controllers/taskcontroller");
+} = require("../controllers/taskController");
 
 
 // CREATE TASK
