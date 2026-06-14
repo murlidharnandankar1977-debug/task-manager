@@ -30,7 +30,7 @@ function Dashboard() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "https://task-manager-89pc.onrender.com/api/tasks",
+        "http://localhost:5000/api/tasks",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ function Dashboard() {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "https://task-manager-89pc.onrender.com/api/tasks",
+        "http://localhost:5000/api/tasks",
         newTask,
         {
           headers: {
@@ -99,7 +99,7 @@ function Dashboard() {
 
 
       await axios.delete(
-        `https://task-manager-89pc.onrender.com/api/tasks/${id}`,
+        `http://localhost:5000/api/tasks/${id}`,
         {
           headers:{
             Authorization:`Bearer ${token}`,
@@ -156,7 +156,7 @@ function Dashboard() {
 
 
       const response = await axios.put(
-        `https://task-manager-89pc.onrender.com/api/tasks/${editingTask._id}`,
+        `http://localhost:5000/api/tasks/${editingTask._id}`,
         newTask,
         {
           headers:{

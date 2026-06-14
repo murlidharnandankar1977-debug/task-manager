@@ -3,16 +3,17 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const API_URL = "http://localhost:5000";
+
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "https://task-manager-89pc.onrender.com/api/auth/login",
+        `${API_URL}/api/auth/login`,
         {
           email,
           password,
@@ -30,39 +31,35 @@ function Login() {
 
     } catch (error) {
       alert(
-        error.response.data.message
+        error?.response?.data?.message ||
+        error.message ||
+        "Login Failed"
       );
     }
   };
 
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-
       <div className="bg-white p-8 rounded-xl shadow-md w-96">
-
         <h2 className="text-2xl font-bold text-center mb-6">
           Login
         </h2>
-
 
         <input
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full border p-3 rounded mb-4"
         />
-
 
         <input
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e)=>setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           className="w-full border p-3 rounded mb-4"
         />
-
 
         <button
           onClick={handleLogin}
@@ -70,10 +67,7 @@ function Login() {
         >
           Login
         </button>
-
-
       </div>
-
     </div>
   );
 }
