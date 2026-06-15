@@ -43,7 +43,7 @@ function Login() {
   };
 
  return (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-blue-500 to-cyan-300">
+  <div className="min-h-screen flex items-center justify-center bg-red-500">
     <div className="w-[350px] backdrop-blur-md bg-white/10 border border-white/20 shadow-2xl rounded-lg p-8">
 
       <div className="flex justify-center mb-6">
