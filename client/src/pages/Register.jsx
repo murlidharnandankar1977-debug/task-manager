@@ -14,7 +14,7 @@ function Register() {
   // Backend deploy hone ke baad yahan URL dalna
   const API_URL = "https://task-manager-zhnr.onrender.com/api/auth/register";
 
-  const handleRegister = async () 
+  const handleRegister = async () => {
     try {
       const response = await axios.post(
         `${API_URL}`,
@@ -92,5 +92,5 @@ function Register() {
     </div>
   );
 
-
+}
 export default Register;

@@ -9,6 +9,11 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
+    console.log(
+      "API URL:",
+      "https://task-manager-zhnr.onrender.com/api/auth/login"
+    );
+
     try {
       const response = await axios.post(
         "https://task-manager-zhnr.onrender.com/api/auth/login",
@@ -17,6 +22,8 @@ function Login() {
           password,
         }
       );
+
+      console.log("SUCCESS:", response.data);
 
       localStorage.setItem(
         "token",
@@ -28,10 +35,13 @@ function Login() {
       navigate("/dashboard");
 
     } catch (error) {
-      console.log(error);
+      console.log("FULL ERROR:", error);
+      console.log("RESPONSE:", error.response);
+      console.log("MESSAGE:", error.message);
 
       alert(
         error?.response?.data?.message ||
+        error.message ||
         "Login Failed"
       );
     }
