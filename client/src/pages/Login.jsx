@@ -8,7 +8,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const API_URL = "https://task-manager-zhnr.onrender.com";
+  const API_URL = "https://task-manager-zhnr.onrender.com/api/tasks";
 
   const handleLogin = async () => {
     try {
