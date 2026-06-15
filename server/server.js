@@ -13,7 +13,9 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "https://task-manager-iota-indol-78.vercel.app"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
