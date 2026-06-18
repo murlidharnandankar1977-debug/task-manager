@@ -14,12 +14,14 @@ const app = express();
 app.use(
   cors({
     origin: [
+      "http://localhost:5173",
       "https://task-manager-iota-indol-78.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
